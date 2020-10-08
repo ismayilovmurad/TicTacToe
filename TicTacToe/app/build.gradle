@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+// Navigation
+apply plugin: "androidx.navigation.safeargs.kotlin"
+// Data Binding
+apply plugin: "kotlin-kapt"
+
+android {
+
+    compileSdkVersion rootProject.ext.compile_sdk_version
+    buildToolsVersion rootProject.ext.build_tools_version
+
+    defaultConfig {
+        applicationId "com.martiandeveloper.tictactoe"
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.target_sdk_version
+        versionCode rootProject.ext.version_code
+        versionName rootProject.ext.version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+}
+
+dependencies {
+    // Default
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // KTX
+    implementation "androidx.core:core-ktx:$ktx_version"
+    // AppCompat
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    // ConstraintLayout
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    // Test
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$junit2_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    // Material
+    implementation "com.google.android.material:material:$material_version"
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // Google Ads
+    implementation "com.google.android.gms:play-services-ads:$google_ads_version"
+    // Play core library for In-App review, In-App update
+    implementation "com.google.android.play:core:$playcore_version"
+    implementation "com.google.android.play:core-ktx:$playcore_ktx_version"
+    // Timber
+    implementation "com.jakewharton.timber:timber:$timber_version"
+}

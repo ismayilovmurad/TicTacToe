@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name" translatable="false">Tic Tac Toe</string>
+    <!--ca-app-pub-3036948542324685/7821829324-->
+    <!--ca-app-pub-3036948542324685/3882584317-->
+    <string name="main_banner" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="main_interstitial" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+
+
+    <string name="start">Start</string>
+    <string name="_continue">Continue</string>
+    <string name="home">Home</string>
+    <string name="try_again">Try again</string>
+    <string name="you_won">You won</string>
+    <string name="android_won">Android won</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
