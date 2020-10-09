@@ -1,9 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.GameFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
-</FrameLayout>
+        <variable
+            name="gameViewModel"
+            type="com.martiandeveloper.tictactoe.viewmodel.GameViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.GameFragment">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fragment_game_firstMCV"
+                    android:layout_width="40pt"
+                    android:layout_height="40pt"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="@{() -> gameViewModel.onFirstMBTNClick()}"
+                    app:cardBackgroundColor="@color/colorOne"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fragment_game_secondMCV"
+                    android:layout_width="40pt"
+                    android:layout_height="40pt"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="@{() -> gameViewModel.onSecondMBTNClick()}"
+                    app:cardBackgroundColor="@color/colorOne"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fragment_game_thirdMCV"
+                    android:layout_width="40pt"
+                    android:layout_height="40pt"
+                    android:layout_marginStart="8dp"
+                    android:onClick="@{() -> gameViewModel.onThirdMBTNClick()}"
+                    app:cardBackgroundColor="@color/colorOne"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fragment_game_fourthMCV"
+                    android:layout_width="40pt"
+                    android:layout_height="40pt"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="@{() -> gameViewModel.onFourthMBTNClick()}"
+                    app:cardBackgroundColor="@color/colorOne"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fragment_game_fifthMCV"
+                    android:layout_width="40pt"
+                    android:layout_height="40pt"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="@{() -> gameViewModel.onFifthMBTNClick()}"
+                    app:cardBackgroundColor="@color/colorOne"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fragment_game_sixthMCV"
+                    android:layout_width="40pt"
+                    android:layout_height="40pt"
+                    android:layout_marginStart="8dp"
+                    android:onClick="@{() -> gameViewModel.onSixthMBTNClick()}"
+                    app:cardBackgroundColor="@color/colorOne"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fragment_game_seventhMCV"
+                    android:layout_width="40pt"
+                    android:layout_height="40pt"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="@{() -> gameViewModel.onSeventhMBTNClick()}"
+                    app:cardBackgroundColor="@color/colorOne"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fragment_game_eighthMCV"
+                    android:layout_width="40pt"
+                    android:layout_height="40pt"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="@{() -> gameViewModel.onEighthMBTNClick()}"
+                    app:cardBackgroundColor="@color/colorOne"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fragment_game_ninthMCV"
+                    android:layout_width="40pt"
+                    android:layout_height="40pt"
+                    android:layout_marginStart="8dp"
+                    android:onClick="@{() -> gameViewModel.onNinthMBTNClick()}"
+                    app:cardBackgroundColor="@color/colorOne"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
