@@ -13,4 +13,7 @@
     <string name="you_won">You won</string>
     <string name="android_won">Android won</string>
     <string name="pause">Pause</string>
+    <string name="your_turn">Your turn…</string>
+    <string name="androids_turn">Android\'s turn…</string>
+    <string name="equal">Equal</string>
 </resources>

@@ -98,6 +98,45 @@ class GameViewModel : ViewModel() {
     val isNinthMCVActive: LiveData<Boolean>
         get() = _isNinthMCVActive
 
+    private var _myTurn = MutableLiveData<Boolean>()
+    val myTurn: LiveData<Boolean>
+        get() = _myTurn
+
+    private var _turnText = MutableLiveData<String>()
+    val turnText: LiveData<String>
+        get() = _turnText
+
+    private var _isFirst = MutableLiveData<Boolean>()
+    val isFirst: LiveData<Boolean>
+        get() = _isFirst
+
+    private var _yourMoves = MutableLiveData<ArrayList<Int>>()
+    val yourMoves: LiveData<ArrayList<Int>>
+        get() = _yourMoves
+
+    private var _androidsMoves = MutableLiveData<ArrayList<Int>>()
+    val androidsMoves: LiveData<ArrayList<Int>>
+        get() = _androidsMoves
+
+    private var _color = MutableLiveData<Int>()
+    val color: LiveData<Int>
+        get() = _color
+
+
+    init {
+        _isFirst.value = true
+
+        _isFirstMCVActive.value = false
+        _isSecondMCVActive.value = false
+        _isThirdMCVActive.value = false
+        _isFourthMCVActive.value = false
+        _isFifthMCVActive.value = false
+        _isSixthMCVActive.value = false
+        _isSeventhMCVActive.value = false
+        _isEighthMCVActive.value = false
+        _isNinthMCVActive.value = false
+    }
+
 
     fun onContinueMBTNClick() {
         _eventContinueMBTNClick.value = true
@@ -241,6 +280,30 @@ class GameViewModel : ViewModel() {
 
     fun setNinthMCVActive(active: Boolean) {
         _isNinthMCVActive.value = active
+    }
+
+    fun setMyTurn(myTurn: Boolean) {
+        _myTurn.value = myTurn
+    }
+
+    fun setTurnText(text: String) {
+        _turnText.value = text
+    }
+
+    fun setFirst(isFirst: Boolean) {
+        _isFirst.value = isFirst
+    }
+
+    fun addYourMove(move: Int) {
+        _yourMoves.value?.add(move)
+    }
+
+    fun addAndroidsMove(move: Int) {
+        _androidsMoves.value?.add(move)
+    }
+
+    fun setColor(color: Int) {
+        _color.value = color
     }
 
 }
