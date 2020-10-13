@@ -1,4 +1,4 @@
-package com.martiandeveloper.tictactoe.view
+package com.martiandeveloper.tictactoegame.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,9 +10,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
-import com.martiandeveloper.tictactoe.viewmodel.HomeViewModel
-import com.martiandeveloper.tictactoe.R
-import com.martiandeveloper.tictactoe.databinding.FragmentHomeBinding
+import com.martiandeveloper.tictactoegame.viewmodel.HomeViewModel
+import com.martiandeveloper.tictactoegame.R
+import com.martiandeveloper.tictactoegame.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 

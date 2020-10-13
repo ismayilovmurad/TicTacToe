@@ -7,7 +7,7 @@
 
         <variable
             name="gameViewModel"
-            type="com.martiandeveloper.tictactoe.viewmodel.GameViewModel" />
+            type="com.martiandeveloper.tictactoegame.viewmodel.GameViewModel" />
 
     </data>
 

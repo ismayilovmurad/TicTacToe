@@ -1,4 +1,4 @@
-package com.martiandeveloper.tictactoe.view
+package com.martiandeveloper.tictactoegame.view
 
 import android.app.AlertDialog
 import android.media.MediaPlayer
@@ -19,13 +19,13 @@ import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.material.card.MaterialCardView
-import com.martiandeveloper.tictactoe.R
-import com.martiandeveloper.tictactoe.databinding.DialogPauseBinding
-import com.martiandeveloper.tictactoe.databinding.FragmentGameBinding
-import com.martiandeveloper.tictactoe.viewmodel.GameViewModel
+import com.martiandeveloper.tictactoegame.R
+import com.martiandeveloper.tictactoegame.databinding.DialogGameOverBinding
+import com.martiandeveloper.tictactoegame.databinding.DialogPauseBinding
+import com.martiandeveloper.tictactoegame.databinding.FragmentGameBinding
+import com.martiandeveloper.tictactoegame.viewmodel.GameViewModel
 import timber.log.Timber
 import kotlin.random.Random
-
 
 class GameFragment : Fragment() {
 
@@ -265,9 +265,21 @@ class GameFragment : Fragment() {
             if (it) {
                 gameViewModel.setTurnText(getString(R.string.your_turn))
                 gameViewModel.setColor(R.color.colorPrimaryDark)
+                fragmentGameBinding.fragmentGameTurnMTV.setTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        gameViewModel.color.value!!
+                    )
+                )
             } else {
                 gameViewModel.setTurnText(getString(R.string.androids_turn))
-                gameViewModel.setColor(R.color.colorTwo)
+                gameViewModel.setColor(R.color.colorThree)
+                fragmentGameBinding.fragmentGameTurnMTV.setTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        gameViewModel.color.value!!
+                    )
+                )
                 generateAndroidsMove()
             }
         })
@@ -284,15 +296,59 @@ class GameFragment : Fragment() {
 
         clickMediaPlayer.start()
 
-        materialCardView.isEnabled = false
+        materialCardView.isClickable = false
 
         if (gameViewModel.myTurn.value == true) {
             gameViewModel.addYourMove(move)
-            gameViewModel.setMyTurn(false)
+
+            gameViewModel.setGameOverText(getString(R.string.you_won))
+
+            checkWinner(gameViewModel.yourMoves.value!!, false)
         } else {
             activateMoves(true)
             gameViewModel.addAndroidsMove(move)
-            gameViewModel.setMyTurn(true)
+
+            gameViewModel.setGameOverText(getString(R.string.android_won))
+
+            checkWinner(gameViewModel.androidsMoves.value!!, true)
+        }
+    }
+
+    private fun checkWinner(list: ArrayList<Int>, myTurn: Boolean) {
+        if (list.contains(1) && list.contains(2) && list.contains(3)) {
+            showGameOverDialog()
+        } else if (list.contains(4) && list.contains(5) && list.contains(6)) {
+            showGameOverDialog()
+        } else if (list.contains(7) && list.contains(8) && list.contains(9)) {
+            showGameOverDialog()
+        } else if (list.contains(1) && list.contains(4) && list.contains(7)) {
+            showGameOverDialog()
+        } else if (list.contains(2) && list.contains(5) && list.contains(8)) {
+            showGameOverDialog()
+        } else if (list.contains(3) && list.contains(6) && list.contains(9)) {
+            showGameOverDialog()
+        } else if (list.contains(1) && list.contains(5) && list.contains(9)) {
+            showGameOverDialog()
+        } else if (list.contains(3) && list.contains(5) && list.contains(7)) {
+            showGameOverDialog()
+        } else {
+
+            if (gameViewModel.isFirstMCVActive.value == true &&
+                gameViewModel.isSecondMCVActive.value == true &&
+                gameViewModel.isThirdMCVActive.value == true &&
+                gameViewModel.isFourthMCVActive.value == true &&
+                gameViewModel.isFifthMCVActive.value == true &&
+                gameViewModel.isSixthMCVActive.value == true &&
+                gameViewModel.isSeventhMCVActive.value == true &&
+                gameViewModel.isEighthMCVActive.value == true &&
+                gameViewModel.isNinthMCVActive.value == true
+            ) {
+
+                gameViewModel.setGameOverText(getString(R.string.equal))
+                showGameOverDialog()
+            } else {
+                gameViewModel.setMyTurn(myTurn)
+            }
         }
     }
 
@@ -425,40 +481,52 @@ class GameFragment : Fragment() {
 
     private fun activateMoves(active: Boolean) {
         if (gameViewModel.isFirstMCVActive.value != true) {
-            fragmentGameBinding.fragmentGameFirstMCV.isEnabled = active
+            fragmentGameBinding.fragmentGameFirstMCV.isClickable = active
         }
 
         if (gameViewModel.isSecondMCVActive.value != true) {
-            fragmentGameBinding.fragmentGameSecondMCV.isEnabled = active
+            fragmentGameBinding.fragmentGameSecondMCV.isClickable = active
         }
 
         if (gameViewModel.isThirdMCVActive.value != true) {
-            fragmentGameBinding.fragmentGameThirdMCV.isEnabled = active
+            fragmentGameBinding.fragmentGameThirdMCV.isClickable = active
         }
 
         if (gameViewModel.isFourthMCVActive.value != true) {
-            fragmentGameBinding.fragmentGameFourthMCV.isEnabled = active
+            fragmentGameBinding.fragmentGameFourthMCV.isClickable = active
         }
 
         if (gameViewModel.isFifthMCVActive.value != true) {
-            fragmentGameBinding.fragmentGameFifthMCV.isEnabled = active
+            fragmentGameBinding.fragmentGameFifthMCV.isClickable = active
         }
 
         if (gameViewModel.isSixthMCVActive.value != true) {
-            fragmentGameBinding.fragmentGameSixthMCV.isEnabled = active
+            fragmentGameBinding.fragmentGameSixthMCV.isClickable = active
         }
 
         if (gameViewModel.isSeventhMCVActive.value != true) {
-            fragmentGameBinding.fragmentGameSeventhMCV.isEnabled = active
+            fragmentGameBinding.fragmentGameSeventhMCV.isClickable = active
         }
 
         if (gameViewModel.isEighthMCVActive.value != true) {
-            fragmentGameBinding.fragmentGameEighthMCV.isEnabled = active
+            fragmentGameBinding.fragmentGameEighthMCV.isClickable = active
         }
 
         if (gameViewModel.isNinthMCVActive.value != true) {
-            fragmentGameBinding.fragmentGameNinthMCV.isEnabled = active
+            fragmentGameBinding.fragmentGameNinthMCV.isClickable = active
         }
+    }
+
+    private fun showGameOverDialog() {
+        val binding = DialogGameOverBinding.inflate(LayoutInflater.from(context))
+
+        binding.gameViewModel = gameViewModel
+        binding.lifecycleOwner = this
+
+        gameOverDialog.setView(binding.root)
+        gameOverDialog.setCanceledOnTouchOutside(false)
+        gameOverDialog.setCancelable(false)
+        gameOverDialog.show()
     }
 
 }

@@ -3,7 +3,7 @@ buildscript {
 
     ext {
         // Gradle
-        gradle_version = '4.0.2'
+        gradle_version = '4.1.0'
         // Kotlin
         kotlin_version = "1.4.10"
         // Compile Sdk
@@ -23,7 +23,7 @@ buildscript {
         // AppCompat
         appcompat_version = "1.2.0"
         // ConstraintLayout
-        constraintlayout_version = "2.0.1"
+        constraintlayout_version = "2.0.2"
         // Test
         junit_version = "4.13"
         junit2_version = "1.1.2"

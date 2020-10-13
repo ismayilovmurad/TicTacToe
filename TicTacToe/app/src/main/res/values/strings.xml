@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name" translatable="false">Tic Tac Toe</string>
-    <!--ca-app-pub-3036948542324685/7821829324-->
-    <!--ca-app-pub-3036948542324685/3882584317-->
-    <string name="main_banner" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="main_interstitial" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <!--ca-app-pub-3940256099942544/6300978111-->
+    <!--ca-app-pub-3940256099942544/1033173712-->
+    <string name="main_banner" translatable="false">ca-app-pub-3036948542324685/7821829324</string>
+    <string name="main_interstitial" translatable="false">ca-app-pub-3036948542324685/3882584317</string>
 
 
     <string name="start">Start</string>

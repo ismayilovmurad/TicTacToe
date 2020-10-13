@@ -1,4 +1,4 @@
-package com.martiandeveloper.tictactoe.viewmodel
+package com.martiandeveloper.tictactoegame.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -135,6 +135,9 @@ class GameViewModel : ViewModel() {
         _isSeventhMCVActive.value = false
         _isEighthMCVActive.value = false
         _isNinthMCVActive.value = false
+
+        _yourMoves.value = ArrayList()
+        _androidsMoves.value = ArrayList()
     }
 
 

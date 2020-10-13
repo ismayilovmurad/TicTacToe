@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.martiandeveloper.tictactoe.view.HomeFragment"
+        android:name="com.martiandeveloper.tictactoegame.view.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
 
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.martiandeveloper.tictactoe.view.GameFragment"
+        android:name="com.martiandeveloper.tictactoegame.view.GameFragment"
         android:label="GameFragment"
         tools:layout="@layout/fragment_game">
 

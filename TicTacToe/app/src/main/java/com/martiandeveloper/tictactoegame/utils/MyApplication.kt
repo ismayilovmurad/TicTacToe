@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.martiandeveloper.tictactoe.utils
+package com.martiandeveloper.tictactoegame.utils
 
 import android.app.Application
 import timber.log.Timber

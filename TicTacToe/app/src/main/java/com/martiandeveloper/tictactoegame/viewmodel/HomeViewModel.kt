@@ -1,4 +1,4 @@
-package com.martiandeveloper.tictactoe.viewmodel
+package com.martiandeveloper.tictactoegame.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

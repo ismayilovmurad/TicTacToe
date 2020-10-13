@@ -1,4 +1,4 @@
-package com.martiandeveloper.tictactoe.view
+package com.martiandeveloper.tictactoegame.view
 
 import android.app.Activity
 import android.content.Intent
@@ -15,10 +15,10 @@ import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
-import com.martiandeveloper.tictactoe.R
-import com.martiandeveloper.tictactoe.utils.FIRST_KEY
-import com.martiandeveloper.tictactoe.utils.FIRST_SHARED_PREFERENCES
-import com.martiandeveloper.tictactoe.utils.IN_APP_UPDATE_REQUEST_CODE
+import com.martiandeveloper.tictactoegame.R
+import com.martiandeveloper.tictactoegame.utils.FIRST_KEY
+import com.martiandeveloper.tictactoegame.utils.FIRST_SHARED_PREFERENCES
+import com.martiandeveloper.tictactoegame.utils.IN_APP_UPDATE_REQUEST_CODE
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 

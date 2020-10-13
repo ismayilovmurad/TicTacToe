@@ -1,4 +1,4 @@
-package com.martiandeveloper.tictactoe
+package com.martiandeveloper.tictactoegame
 
 import org.junit.Test
 
