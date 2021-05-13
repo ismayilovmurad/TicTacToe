@@ -12,22 +12,12 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        ads:layout_constraintBottom_toBottomOf="parent"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/activity_main_mainAV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/navigation_main"
         tools:ignore="FragmentTagUsage" />
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/activity_main_mainAV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/main_banner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

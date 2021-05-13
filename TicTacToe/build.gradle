@@ -34,11 +34,6 @@ buildscript {
         navigation_version = "2.3.0"
         // Lifecycle
         lifecycle_version = "2.2.0"
-        // Google Ads
-        google_ads_version = "19.4.0"
-        // Play core library for In-App Review & In-App Update
-        playcore_version = "1.8.2"
-        playcore_ktx_version = "1.8.1"
         // Timber
         timber_version = "4.7.1"
     }

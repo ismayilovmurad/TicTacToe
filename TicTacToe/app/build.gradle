@@ -83,11 +83,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    // Google Ads
-    implementation "com.google.android.gms:play-services-ads:$google_ads_version"
-    // Play core library for In-App review, In-App update
-    implementation "com.google.android.play:core:$playcore_version"
-    implementation "com.google.android.play:core-ktx:$playcore_ktx_version"
     // Timber
     implementation "com.jakewharton.timber:timber:$timber_version"
 }

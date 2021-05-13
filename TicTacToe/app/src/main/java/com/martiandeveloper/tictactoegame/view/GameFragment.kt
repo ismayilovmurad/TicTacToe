@@ -15,9 +15,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
-import com.google.android.gms.ads.AdListener
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
 import com.google.android.material.card.MaterialCardView
 import com.martiandeveloper.tictactoegame.R
 import com.martiandeveloper.tictactoegame.databinding.DialogGameOverBinding
@@ -36,8 +33,6 @@ class GameFragment : Fragment() {
     private lateinit var gameOverDialog: AlertDialog
 
     private lateinit var pauseDialog: AlertDialog
-
-    private lateinit var interstitialAd: InterstitialAd
 
     private lateinit var clickMediaPlayer: MediaPlayer
 
@@ -65,10 +60,6 @@ class GameFragment : Fragment() {
         pauseDialog = AlertDialog.Builder(context).create()
 
         observe()
-
-        interstitialAd = InterstitialAd(context)
-
-        setAds()
 
         clickMediaPlayer = MediaPlayer.create(context, R.raw.click)
 
@@ -127,10 +118,6 @@ class GameFragment : Fragment() {
                 navigate(GameFragmentDirections.actionGameFragmentSelf())
 
                 gameViewModel.onTryAgainMBTNClickComplete()
-
-                if (interstitialAd.isLoaded) {
-                    interstitialAd.show()
-                }
             }
         })
 
@@ -350,21 +337,6 @@ class GameFragment : Fragment() {
                 gameViewModel.setMyTurn(myTurn)
             }
         }
-    }
-
-    private fun setAds() {
-        interstitialAd.adUnitId = getString(R.string.main_interstitial)
-
-        val interstitialAdRequest = AdRequest.Builder().build()
-        interstitialAd.loadAd(interstitialAdRequest)
-
-        interstitialAd.adListener = object : AdListener() {
-            override fun onAdClosed() {
-                super.onAdClosed()
-                interstitialAd.loadAd(interstitialAdRequest)
-            }
-        }
-
     }
 
     private fun setClick() {
